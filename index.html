@@ -92,8 +92,14 @@ fetch("data.json")
     .then(json => {
         console.table(json.list)
         json.list.forEach(element => {
+            var title = "<h3>" + element.streetname + "</h3>"
+
+            if (element.link) {
+                title = "<a href=\"" + element.link + "\">" + title + "</a>"
+            }
+
             var marker = L.marker([element.lat, element.lng]/*, {draggable: true}*/)
-                .bindPopup("<h3>" + element.streetname + "</h3><p>" + element.note + "</p>")
+                .bindPopup(title + "<p>" + element.note + "</p>")
                 .addTo(map)
                 .on('dragend', eventObject => console.log(eventObject))
         })

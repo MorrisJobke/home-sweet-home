@@ -10,12 +10,15 @@ Die Daten müssen in `data.json` in folgenden Format abgelegt sein:
         {
             "streetname": "Müllerstraße 1",
             "note": "Das sieht interessant aus",
+            "link": "https://example.org",
             "lat": 50.12345,
             "lng": 10.12345
         }
     ]
 }
 ```
+
+Das Feld `link` ist optional.
 
 ### Geocode
 
