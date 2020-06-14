@@ -11,6 +11,7 @@ Die Daten müssen in `data.json` in folgenden Format abgelegt sein:
             "streetname": "Müllerstraße 1",
             "note": "Das sieht interessant aus",
             "link": "https://example.org",
+            "dismissed": "Hat uns doch nicht gefallen.",
             "lat": 50.12345,
             "lng": 10.12345
         }
@@ -18,7 +19,7 @@ Die Daten müssen in `data.json` in folgenden Format abgelegt sein:
 }
 ```
 
-Das Feld `link` ist optional.
+Das Feld `link` ist optional. Das Feld `dismissed` ist ebenfalls optional. Falls es gesetzt ist, sind die Marker leicht durchsichtig und der Text wird mit ausgegeben.
 
 ### Geocode
 

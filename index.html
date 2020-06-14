@@ -115,16 +115,32 @@ fetch("data.json")
     .then(json => {
         console.table(json.list)
         json.list.forEach(element => {
+            var popupBody = ""
             var title = "<h3>" + element.streetname + "</h3>"
 
             if (element.link) {
                 title = "<a href=\"" + element.link + "\">" + title + "</a>"
             }
 
-            var marker = L.marker([element.lat, element.lng]/*, {draggable: true}*/)
-                .bindPopup(title + "<p>" + element.note + "</p>")
+            popupBody = title + "<p>" + element.note + "</p>"
+
+            if (element.dismissed) {
+                popupBody += "<p><b>Verworfen:</b> " + element.dismissed + "<p>"
+            }
+
+            var marker = L.marker(
+                [element.lat, element.lng],
+                {
+                    /*/draggable: true,/**/
+                    opacity: element.dismissed ? 0.2 : 1.0
+                })
+                .bindPopup(popupBody)
                 .addTo(map)
-                .on('dragend', eventObject => console.log(eventObject))
+                .on('dragend', eventObject => console.log(
+                    '"lat": ' +
+                    eventObject.target._latlng.lat.toPrecision(7) + ',\n            "lng": ' +
+                    eventObject.target._latlng.lng.toPrecision(7)
+                ))
         })
     });
 </script>
