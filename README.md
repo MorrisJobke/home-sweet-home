@@ -12,6 +12,7 @@ Die Daten müssen in `data.json` in folgenden Format abgelegt sein:
             "note": "Das sieht interessant aus",
             "link": "https://example.org",
             "dismissed": "Hat uns doch nicht gefallen.",
+            "size": 1000,
             "lat": 50.12345,
             "lng": 10.12345
         }
@@ -19,7 +20,11 @@ Die Daten müssen in `data.json` in folgenden Format abgelegt sein:
 }
 ```
 
-Das Feld `link` ist optional. Das Feld `dismissed` ist ebenfalls optional. Falls es gesetzt ist, sind die Marker leicht durchsichtig und der Text wird mit ausgegeben.
+Folgende Felder sind optional:
+
+ * `link`
+ * `dismissed` - Falls es gesetzt ist, sind die Marker leicht durchsichtig und der Text wird mit ausgegeben.
+ * `size` - Falls es gesetzt ist, wird diese Größe in Quadratmetern im Popup mit angezeigt.
 
 ### Geocode
 

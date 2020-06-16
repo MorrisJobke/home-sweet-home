@@ -207,6 +207,9 @@ fetch("data.json")
             if (element.dismissed) {
                 popupBody += "<p><b>Verworfen:</b> " + element.dismissed + "<p>"
             }
+            if (element.size) {
+                popupBody += "<p><b>Größe:</b> " + element.size + " m<sup>2</sup><p>"
+            }
 
             var marker = L.marker(
                 [element.lat, element.lng],
