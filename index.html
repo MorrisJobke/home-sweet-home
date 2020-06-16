@@ -73,6 +73,80 @@ var bodenrichtwerte = L.tileLayer.wms('https://www.landesvermessung.sachsen.de/f
     cfg: 'boris',
 })
 
+// https://www.telekom.de/start/netzausbau
+var dsl16 = L.tileLayer.wms('https://t-map.telekom.de/arcgis/rest/services/public/dsl_coverage/MapServer/export', {
+    layers: 'show:33,32',
+    opacity: .5,
+    dpi: 96,
+    transparent: true,
+    format: 'png8',
+    styles: '',
+    f: 'image'
+})
+var vdsl50 = L.tileLayer.wms('https://t-map.telekom.de/arcgis/rest/services/public/dsl_coverage/MapServer/export', {
+    layers: 'show:31,30',
+    opacity: .5,
+    dpi: 96,
+    transparent: true,
+    format: 'png8',
+    styles: '',
+    f: 'image'
+})
+var vdsl100 = L.tileLayer.wms('https://t-map.telekom.de/arcgis/rest/services/public/dsl_coverage/MapServer/export', {
+    layers: 'show:29,28',
+    opacity: .5,
+    dpi: 96,
+    transparent: true,
+    format: 'png8',
+    styles: '',
+    f: 'image'
+})
+var vdsl250 = L.tileLayer.wms('https://t-map.telekom.de/arcgis/rest/services/public/dsl_coverage/MapServer/export', {
+    layers: 'show:26',
+    opacity: .5,
+    dpi: 96,
+    transparent: true,
+    format: 'png8',
+    styles: '',
+    f: 'image'
+})
+var vdsl250 = L.tileLayer.wms('https://t-map.telekom.de/arcgis/rest/services/public/dsl_coverage/MapServer/export', {
+    layers: 'show:26',
+    opacity: .5,
+    dpi: 96,
+    transparent: true,
+    format: 'png8',
+    styles: '',
+    f: 'image'
+})
+var fiberAndCable = L.tileLayer.wms('https://t-map.telekom.de/arcgis/rest/services/public/dsl_coverage/MapServer/export', {
+    layers: 'show:38',
+    opacity: .5,
+    dpi: 96,
+    transparent: true,
+    format: 'png8',
+    styles: '',
+    f: 'image'
+})
+var fiber = L.tileLayer.wms('https://t-map.telekom.de/arcgis/rest/services/public/dsl_coverage/MapServer/export', {
+    layers: 'show:25',
+    opacity: .5,
+    dpi: 96,
+    transparent: true,
+    format: 'png8',
+    styles: '',
+    f: 'image'
+})
+var highspeedPlanned = L.tileLayer.wms('https://t-map.telekom.de/arcgis/rest/services/public/dsl_coverage/MapServer/export', {
+    layers: 'show:27',
+    opacity: .5,
+    dpi: 96,
+    transparent: true,
+    format: 'png8',
+    styles: '',
+    f: 'image'
+})
+
 var map = L.map('map', {
     center: [50.8184, 12.8469],
     zoom: 13,
@@ -107,6 +181,12 @@ var overlayMaps = {
     "Flurstücke": geoportal,
     "Topologie": hillShading,
     "Bodenrichtwerte": bodenrichtwerte,
+    "DSL 16": dsl16,
+    "VDSL 50": vdsl50,
+    "VDSL 100": vdsl100,
+    "VDSL 250": vdsl250,
+    "Glasfaser und Kabel (bis 500 MBit/s)": fiberAndCable,
+    "Glasfaser (bis 1 GBit/s)": fiber,
 }
 L.control.layers(baseMaps, overlayMaps).addTo(map)
 
