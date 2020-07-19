@@ -34,3 +34,7 @@ Falls man sich den Aufwand der Geocodierung nicht selbst machen will gibt es ein
 
 * MapBox Token in `index.html` setzen
 * `index.html` und `data.json` auf einen Webserver legen und öffnen
+
+## Sonstige Links
+
+* [Glasfaserkarte von Eins](https://www.eins.de/files/eins/content/dokumente/Privatkunden/Internet/Infrastruktur/Breitband_Ausbaugebiete_Chemnitz_Übersicht.pdf)
